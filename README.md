@@ -19,7 +19,7 @@ add_action( 'wp_enqueue_scripts', 'enqueue_bswalker' );
 
 ## Usage
 
-The `wp_nav_menu()` function is usually found in the `header.php` file of your theme - `/wp-content/your-theme/header.php`.
+The `wp_nav_menu()` function is usually found in the **header.php** file of your theme - `/wp-content/your-theme/header.php`.
 
 It looks like the following code :
 
@@ -34,7 +34,8 @@ wp_nav_menu(
 );
 ```
 
-An example of a Fixed top Responsive Navbar that automatically collapses at the lg (large) breakpoint **should mostly** look like this :
+An example of a Fixed top Responsive Navbar that automatically collapses at the lg (large) breakpoint  
+**SHOULD mostly** look like this :
 
 ```html
 <nav id="mainNav" class="navbar navbar-expand-lg navbar-light fixed-top" role="navigation">
@@ -50,8 +51,8 @@ An example of a Fixed top Responsive Navbar that automatically collapses at the 
                 'container'       => 'div',
                 'container_class' => 'collapse navbar-collapse',
                 'container_id'    => 'navbarResponsive',
-                'menu_class'      => 'navbar-nav ml-auto',
-                'theme_location'  => 'menu-1',
+                'menu_class'      => 'navbar-nav ml-auto', // See third note bellow (Spacing).
+                'theme_location'  => 'menu-1', // See first note bellow.
             )
         );
         ?>
@@ -69,10 +70,16 @@ register_nav_menus(
     array(
         'menu-1' => esc_html__( 'Primary', 'your-theme-text-domain' ),
         // The 'theme_location' here is 'menu-1'.
+        // 'Primary' is the 'description' that you'll see in the backend.
     )
 );
 ```
 2- The main navigation `id` is `mainNav`.  
 If you change the main navigation`id` for design purposes, you will also have to change it in **bsWalker.min.js** !
 
-3- Follow the link to learn more about the [Bootstrap Navbar](https://getbootstrap.com/docs/4.3/components/navbar/)
+3- Follow this link to learn more about the [Bootstrap Navbar](https://getbootstrap.com/docs/4.3/components/navbar/) and this one for [Spacing](https://getbootstrap.com/docs/4.3/utilities/spacing/).
+
+## Displaying the menu
+
+To display the menu, you'll have to assign a menu in your backend ( or with the Customizer ),  
+to the 'description' of the menu 'theme_location' (see the first note above).
