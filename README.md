@@ -84,4 +84,4 @@ If you change the main navigation`id` for design purposes, you will also have to
 To display the menu, you'll have to assign a menu in your backend ( or with the Customizer ),  
 to the 'description' of the menu 'theme_location' (see the first note above and the image bellow).  
 Go to *Dashboard* > *Appearance* > *Menus* > *Manage Locations (tab)*  
-![alt text]( "Logo Title Text 1")
+![alt text](menus.png "Logo Title Text 1")
